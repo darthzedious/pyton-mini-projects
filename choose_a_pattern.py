@@ -15,15 +15,11 @@ while choice != 4:
         print()
         if direction == 'u':
             for i in range(number_of_rows):
-                for j in range(number_of_rows - 1):
-                    print(end='')
                 for j in range(i + 1):
                     print('*', end='')
                 print()
         elif direction == 'd':
             for i in range(number_of_rows, 0, -1):
-                for j in range(number_of_rows + 1):
-                    print(end='')
                 for j in range(i):
                     print('*', end='')
                 print()
@@ -32,7 +28,6 @@ while choice != 4:
         number_of_columns = int(input('Enter the number of columns for the rectangle: '))
         print()
         for i in range(number_of_rows):
-            print(end='')
             for j in range(number_of_columns):
                 print('*', end='')
             print()
