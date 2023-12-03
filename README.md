@@ -1,2 +1,1 @@
-# choose-a-pattern
-This is a program where you have three options to choose from to view a different pattern.
+In this repository I will store some of my mini projects, mini games or whatever comes to my mind.
