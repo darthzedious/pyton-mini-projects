@@ -9,12 +9,16 @@
       "answer": "hello"
     },
     {
-      "question": "Hey how was Christmas 2024?",
+      "question": "Hey how was Christmas 2023?",
       "answer": "It was great we were all together in Stamboliiski!"
     },
     {
       "question": "what is my brothers name",
       "answer": "His name is Stoyan"
+    },
+    {
+      "question": "when were you created ",
+      "answer": "The date of my creation is 27.12.2023 at 3:10 AM."
     }
   ]
 }

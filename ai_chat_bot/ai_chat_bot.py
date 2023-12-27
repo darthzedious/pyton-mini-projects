@@ -25,8 +25,7 @@ def get_answer_for_question(question: str, knowledge_base: dict) -> str | None:
 
 
 def generate_response():
-    data_knowledge: dict = load_data_knowledge(
-        "../../../../PycharmProjects/pythonProjectBasic/cool_stuff/data_knowledge.json")
+    data_knowledge: dict = load_data_knowledge("data_knowledge.json")
 
     while True:
         user_input: str = input("User: ")
@@ -44,7 +43,7 @@ def generate_response():
             new_answer = input("Write the right answer ot type next to continue: ")
             if new_answer.lower() != "next":
                 data_knowledge["questions"].append({"question": user_input, "answer": new_answer})
-                save_data_knowledge('../../../../PycharmProjects/pythonProjectBasic/cool_stuff/data_knowledge.json', data_knowledge)
+                save_data_knowledge('data_knowledge.json', data_knowledge)
                 print("I learned something new! Thank you :)")
 
 
