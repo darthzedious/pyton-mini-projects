@@ -20,13 +20,6 @@ class FitnessProgram:
             json.dump(data, users_file, indent=2)
             # info_dict["Password"] = get_password_hash(info_dict["Password"])
 
-    # def display_data_base(self):
-    #     """"can be used either tabulate or prettytable library
-    #      to display the information about the registered users in out data base"""
-    #     data = self.load_data_from_db("user_db.json")
-    #     users_info = data.get("users")
-    #     print(tabulate(users_info, headers="keys", tablefmt="grid"))
-
     def register_user(self, name, gender, age, weight, height, exercise_duration, activity_level):
         """In this method we check if the users is already registered,
         if not user is being created, added to the data base and the changes are saved."""
@@ -57,6 +50,7 @@ class FitnessProgram:
             }
             user_db["users"].append(user_info)
             self.save_data_to_db("user_db.json", user_db)
+
             return f"{name} registered successfully as a new user."
 
     def filter_overweight_people(self):
@@ -64,7 +58,9 @@ class FitnessProgram:
         users_info = data.get("users")
 
         filtered_people = filter(lambda p: p["BMI"] >= 25, users_info)
-        print(tabulate(filtered_people, headers="keys", tablefmt="heavy_grid"))
+        print()
+        result = tabulate(filtered_people, headers="keys", tablefmt="heavy_grid")
+        return result
         # grid and heavy_outline are also a okay options
 
     def sort_by_bmi_and_calories_burned(self):
@@ -73,8 +69,25 @@ class FitnessProgram:
         data = self.load_data_from_db("user_db.json")
         users_info = data.get("users")
         sorted_people = sorted(users_info, key=lambda p: (-p["BMI"], -p["Calories burned"]))
-        print(tabulate(sorted_people, headers="keys", tablefmt="heavy_grid"))
+        print()
+        result = tabulate(sorted_people, headers="keys", tablefmt="heavy_grid")
+        return result
         # grid and heavy_outline are also a okay options
+
+    def load_workout_plan(self):
+        """This method takes the information about the work out plan from the db and displays it in table format"""
+        data = self.load_data_from_db("user_db.json")
+        workout_plan_data = data.get("workout plan")
+
+    # Initialize an empty dictionary to store all workout plans
+        all_workout_plans = {}
+
+        # Loop through each key in the workout plan data and add it to the new dictionary
+        for key, value in workout_plan_data[0].items():
+            all_workout_plans[key] = value
+
+        workout_plan_as_table = tabulate(all_workout_plans, headers="keys", tablefmt="heavy_grid")
+        return workout_plan_as_table
 
     @staticmethod
     def calculate_needed_calories_for_mild_weight_loss(amr):
@@ -86,37 +99,12 @@ class FitnessProgram:
         calories = amr + 200
         return calories
 
+    def get_specific_username_info(self, username):
+        data = self.load_data_from_db("user_db.json")
+        users = data.get("users")
 
-# def main():
-#     while True:
-#         command = int(input(f"Enter a random number to continue, enter 1 to quit: "))
-#
-#         if command == 1:
-#             break
-#         app = FitnessProgram()
-#         name = input("Enter username: ")
-#         gender = input(f"Enter gender(male/female): ")
-#         age = int(input(f"Enter your age: "))
-#         weight = float(input(f"Enter your weight in kg: "))
-#         height = int(input(f"Enter your height in cm: "))
-#         exercise_duration = int(input(f"Enter exercise duration in minutes: "))
-#         activity_level = input(f"Enter your weekly activity level\n"
-#                                f"(=> Sedentary (little or no exercise),\n"
-#                                f"=> Light activity (exercise 1–3 days/week),\n"
-#                                f"=> Moderate (exercise 3–5 days/week),\n"
-#                                f"=> Active (exercise 6–7 days/week),\n"
-#                                f"=> Very active (hard exercise 6–7 days/week)): ")
-#
-#         print(app.register_user(name, gender, age, weight, height, exercise_duration, activity_level))
-#         # print("Display all users:")
-#         # app.display_data_base()
-#         print()
-#         print("Overweight people:")
-#         app.filter_overweight_people()
-#         print()
-#         print("Display all users sorted users by BMI and Burned calories:")
-#         app.sort_by_bmi_and_calories_burned()
-#
-#
-# if __name__ == "__main__":
-#     main()
+        for user in users:
+            if user["Name"] == username:
+                user_data = [[key, value] for key, value in user.items()]
+                return tabulate(user_data, headers=["Category", "User"], tablefmt="heavy_grid")
+        return f"{username} not found. Please try again."

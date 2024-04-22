@@ -57,7 +57,6 @@ class Person:
             amr_index = 1.9
         return amr_index
 
-
     def calculate_basal_metabolic_rate(self, weight, height, gender, age):
         """This method calculates the needed calories for the person
         just to exist without any activity.The method takes the person's gender, weight in kg,

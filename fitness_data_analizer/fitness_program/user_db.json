@@ -29,6 +29,79 @@
       "Calories needed for weight maintenance based on activity level": 2249.608,
       "Calories on being on a deficit for 0.5kg per week weight loss": 1749.6080000000002,
       "Calories on being on a calories surplus for minimal fat(may increase with weight gain)": 2449.608
+    },
+    {
+      "Name": "gosho",
+      "Gender": "male",
+      "Age": 21,
+      "Weight": 65.0,
+      "Height": 175,
+      "Exercise duration": 90,
+      "Activity level": "Active",
+      "BMI": 21.224489795918366,
+      "Calories burned": 450,
+      "Calories needed for existing without any activity": 1693.8899999999999,
+      "Calories needed for weight maintenance based on activity level": 2921.96025,
+      "Calories on being on a deficit for 0.5kg per week weight loss": 2421.96025,
+      "Calories on being on a calories surplus for minimal fat(may increase with weight gain)": 3121.96025
+    }
+  ],
+  "workout plan": [
+    {
+      "Chest and triceps": [
+        "4 x Cable chest press machine",
+        "4 x Upper chest Smith machine",
+        "4 x Chest press machine free weight",
+        "4 x Upper chest press free weight",
+        "4 x Cable flies",
+        "4 x Cable push-down",
+        "4 x Overhead cable triceps extension"
+      ],
+      "Back and biceps": [
+        "4 x Lat pull-down",
+        "4 x Barbell rows",
+        "4 x Horizontal pull machine or cable machine",
+        "4 x Single arm Iso pull-down",
+        "4 x Single arm cable row",
+        "4 x Pullover",
+        "4 x Cable curls for biceps",
+        "4 x Dumbbell bicep curls"
+      ],
+      "Shoulder and triceps": [
+        "4 x Smith machine Shoulder press",
+        "4 x Side delt flyes",
+        "4 x Rear delt fly/4 x Cable cross-body rear delt extension",
+        "4 Single arm Side delt fly",
+        "4 x Reverse peck deck fly",
+        "4 x Cable push-down",
+        "4 x Cable cross-body Triceps extension"
+      ],
+      "Arms": [
+        "4 x V bar Cable push-down",
+        "4 x Overhead cable triceps extension",
+        "4 x Rope Cable push-down",
+        "4 x Cable cross-body Triceps extension",
+        "4 x Cable curls for biceps close grip",
+        "4 x Single arm Preacher curl machine",
+        "4 x Dumbbell curls",
+        "4 x Hammer curls",
+        "4 x Dumbell wrist extension"
+      ],
+      "Legs": [
+        "4 x Leg Extension machine warmup",
+        "5 x Barbell Squad",
+        "4 x Leg press",
+        "3/4 x Leg Extension heavy",
+        "5 x Hamstring extension machine",
+        "5 x Romanian deadlift"
+      ],
+      "Glutes(For girls)": [
+        "4 x Cable kickbacks",
+        "4 x Hip thrust",
+        "4 x Goblet squats",
+        "4 x Romanian deadlift",
+        "4 x Cable kickbacks(Optional)"
+      ]
     }
   ]
 }
