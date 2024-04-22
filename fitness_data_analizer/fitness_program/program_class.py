@@ -64,7 +64,8 @@ class FitnessProgram:
         users_info = data.get("users")
 
         filtered_people = filter(lambda p: p["BMI"] >= 25, users_info)
-        print(tabulate(filtered_people, headers="keys", tablefmt="grid"))
+        print(tabulate(filtered_people, headers="keys", tablefmt="heavy_grid"))
+        # grid and heavy_outline are also a okay options
 
     def sort_by_bmi_and_calories_burned(self):
         """"can be used either tabulate or prettytable library
@@ -72,7 +73,8 @@ class FitnessProgram:
         data = self.load_data_from_db("user_db.json")
         users_info = data.get("users")
         sorted_people = sorted(users_info, key=lambda p: (-p["BMI"], -p["Calories burned"]))
-        print(tabulate(sorted_people, headers="keys", tablefmt="grid"))
+        print(tabulate(sorted_people, headers="keys", tablefmt="heavy_grid"))
+        # grid and heavy_outline are also a okay options
 
     @staticmethod
     def calculate_needed_calories_for_mild_weight_loss(amr):
