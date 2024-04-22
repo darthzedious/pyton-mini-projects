@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "Name": "angel",
+      "Gender": "male",
+      "Age": 24,
+      "Weight": 77.0,
+      "Height": 175,
+      "Exercise duration": 90,
+      "Activity level": "Moderate",
+      "BMI": 25.142857142857142,
+      "Calories burned": 450,
+      "Calories needed for existing without any activity": 1838.625,
+      "Calories needed for weight maintenance based on activity level": 2849.86875,
+      "Calories on being on a deficit for 0.5kg per week weight loss": 2349.86875,
+      "Calories on being on a calories surplus for minimal fat(may increase with weight gain)": 3049.86875
+    }
+  ]
+}

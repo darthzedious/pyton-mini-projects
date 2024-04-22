@@ -13,12 +13,12 @@ def save_data_knowledge(file_path: str, data: dict):
         json.dump(data, file, indent=2)
 
 
-def find_best_match(user_question: str, questions: list[str]) -> str | None:
+def find_best_match(user_question: str, questions: list[str]):
     matches = list(get_close_matches(user_question, questions, n=1, cutoff=0.6))
     return matches[0] if matches else None
 
 
-def get_answer_for_question(question: str, knowledge_base: dict) -> str | None:
+def get_answer_for_question(question: str, knowledge_base: dict):
     for database_question in knowledge_base["questions"]:
         if database_question["question"] == question:
             return database_question["answer"]
@@ -32,8 +32,7 @@ def generate_response():
         if user_input.lower() == "quit":
             break
 
-        best_match: str | None = find_best_match(user_input,
-                                                 [database_question["question"] for database_question
+        best_match = find_best_match(user_input, [database_question["question"] for database_question
                                                   in data_knowledge["questions"]])
         if best_match:
             answer = get_answer_for_question(best_match, data_knowledge)
