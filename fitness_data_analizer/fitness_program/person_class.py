@@ -19,6 +19,16 @@ class Person:
         self.amr = self.calculate_active_metabolic_rate(self.bmr, self.amr_index)
 
     @property
+    def name(self):
+        return self.__name
+
+    @name.setter
+    def name(self, value):
+        if not value.strip():
+            raise ValueError("Enter valid name.")
+        self.__name = value
+
+    @property
     def gender(self):
         return self.__gender
 
@@ -74,7 +84,7 @@ class Person:
 
     def calculate_bmi(self, weight_kg, height_meters):
         """Calculate the Body Mass Index (BMI)."""
-        bmi_formula = (weight_kg / (height_meters ** 2)) * 10000 # works in centimeters
+        bmi_formula = (weight_kg / (height_meters ** 2)) * 10000  # works in centimeters
         return bmi_formula
 
     def calculate_calories_burned(self, exercise_duration):

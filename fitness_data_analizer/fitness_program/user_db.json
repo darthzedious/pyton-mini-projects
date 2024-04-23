@@ -44,6 +44,21 @@
       "Calories needed for weight maintenance based on activity level": 2921.96025,
       "Calories on being on a deficit for 0.5kg per week weight loss": 2421.96025,
       "Calories on being on a calories surplus for minimal fat(may increase with weight gain)": 3121.96025
+    },
+    {
+      "Name": "maria 2",
+      "Gender": "female",
+      "Age": 21,
+      "Weight": 62.0,
+      "Height": 163,
+      "Exercise duration": 30,
+      "Activity level": "Moderate",
+      "BMI": 23.335466144755166,
+      "Calories burned": 150,
+      "Calories needed for existing without any activity": 1451.3600000000001,
+      "Calories needed for weight maintenance based on activity level": 2249.608,
+      "Calories on being on a deficit for 0.5kg per week weight loss": 1749.6080000000002,
+      "Calories on being on a calories surplus for minimal fat(may increase with weight gain)": 2449.608
     }
   ],
   "workout plan": [
